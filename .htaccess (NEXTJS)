@@ -1,0 +1,11 @@
+# BEGIN NextJS
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Rewrite URLs to look for a corresponding .html file
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)$ /$1.html [L]
+</IfModule>
+# END NextJS
